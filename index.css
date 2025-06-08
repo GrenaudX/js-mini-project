@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Varela Round', sans-serif;
+  background-image: url('asets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(240, 240, 240, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1100px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 55px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #474747;
+  color: #fff;
+}
+.UserNAME {
+  display: none;
+  cursor: pointer;
+  width: max-content;
+}
+.Use_butto {
+  pointer-events: none;
+}
+.LogOutContainer {
+  display: none; /* يبقى مخفي بشكل افتراضي */
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #e74c3c;  /* لون أحمر جذاب */
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  text-align: center;
+  width: max-content;
+}
+
+.LogOutContainer:hover {
+  background-color: #c0392b; /* لون أحمر داكن عند المرور بالفأرة */
+  transform: scale(1.05);
+}
+.cnmssg {
+  position: absolute;
+  right: 2vw;
+  top: 10vw;
+  padding: 10px 20px;
+  background-color: #3ce742;
+  color: white;
+  display: none;
+  font-size: 20px;
+  border-radius: 10px;
+}
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px 20px 30px;
+}
+
+.hero .title {
+  font-size: 48px;
+  color: #a04bba;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+.hero .text {
+  font-size: 20px;
+  color: #6a6a6a;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Grid Blocks (2 by 2 Layout) */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 columns */
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+    transition:  0.3s ease;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+.block {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    min-height: 250px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }  
+.block .titleb1 {
+  color: #CB9854;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.block .titleb2 {
+    color: #80CB54;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .block .titleb3 {
+    color: #CB5454;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .block .titleb4 {
+    color: #54B5CB;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .block p {
+    color: #6a6a6a;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+/* Thanks Section */
+.remerciement {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 40px auto 0;
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.remerciement h2 {
+  color: #A04BBA;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.remerciement p {
+  font-size: 18px;
+  color: #444;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 14px;
+}
+
+/* Responsive: Ensuring 2x2 layout on smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .hero .title {
+    font-size: 32px;
+  }
+
+  .hero .text {
+    font-size: 16px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Ensures 2 blocks per row */
+    gap: 20px;
+  }
+
+  .remerciement h2 {
+    font-size: 24px;
+  }
+
+  .remerciement p {
+    font-size: 16px;
+  }
+
+  .site-footer {
+    font-size: 13px;
+    padding: 15px;
+    margin: auto;
+  }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Viewer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="stopwatch.css" />
+    <!-- Highlight.js CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+
+<!-- Highlight.js Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<!-- Initialize Highlight.js -->
+<script>hljs.highlightAll();</script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html"><img class="logo" src="asets/LOGO.png" alt="LOGO" /></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <!-- <a href="register.html">Register</a>
+      <a href="login.html">Login</a> -->
+    </div>
+  </div>
+
+  <!-- Project Viewer Section -->
+  <section class="project-section">
+    <div class="project-container">
+      <!-- Project Description -->
+      <div class="project-info">
+        <h2>Stopwatch</h2>
+        <div class="hero">
+          <p class="text">Track time precisely with a clean and stylish stopwatch.</p>
+        </div>
+  
+        <div class="stopwatch-container">
+          <div class="stopwatch">
+            <div id="display">00:00:00.000</div>
+            <div class="stopwatch-buttons">
+              <button onclick="startStopwatch()">Start</button>
+              <button onclick="stopStopwatch()">Stop</button>
+              <button onclick="resetStopwatch()">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Demo Area -->
+      <div class="project-demo">
+        <!-- You can replace this with an iframe or embedded JS later -->
+        <div class="demo-box">
+          <!-- Your JS UI will go here -->
+          <div class="code-demo-box">
+            <h2>JavaScript Code</h2>
+            <pre><code class="js-code">
+let startTime;
+let running = false;
+let interval;
+
+function startStopwatch() {
+  if (!running) {
+    startTime = Date.now() - (window.elapsedTime || 0);
+    interval = setInterval(updateDisplay, 10);
+    running = true;
+  }
+}
+
+function stopStopwatch() {
+  if (running) {
+    clearInterval(interval);
+    window.elapsedTime = Date.now() - startTime;
+    running = false;
+  }
+}
+
+function resetStopwatch() {
+  clearInterval(interval);
+  document.getElementById("display").textContent = "00:00:00.000";
+  running = false;
+  window.elapsedTime = 0;
+}
+
+function updateDisplay() {
+  const elapsed = Date.now() - startTime;
+  let ms = elapsed % 1000;
+  let totalSeconds = Math.floor(elapsed / 1000);
+  let seconds = totalSeconds % 60;
+  let minutes = Math.floor(totalSeconds / 60) % 60;
+  let hours = Math.floor(totalSeconds / 3600);
+
+  const format = (num, digits = 2) => num.toString().padStart(digits, "0");
+
+  document.getElementById("display").textContent = 
+    `${format(hours)}:${format(minutes)}:${format(seconds)}.${format(ms, 3)}`;
+}
+              
+            </code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-container">
+      <!-- Project Name Below -->
+      <h2 class="project-name">Project: StopWatch</h2>
+      
+      <!-- Navigation Buttons -->
+      <div class="project-nav">
+        <button onclick="location.href='passwordgenerator.html'">← Previous</button>
+        <button onclick="location.href='quotegenerator.html'">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Taha Ait Itto DD102. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+  let startTime;
+let running = false;
+let interval;
+
+function startStopwatch() {
+  if (!running) {
+    startTime = Date.now() - (window.elapsedTime || 0);
+    interval = setInterval(updateDisplay, 10);
+    running = true;
+  }
+}
+
+function stopStopwatch() {
+  if (running) {
+    clearInterval(interval);
+    window.elapsedTime = Date.now() - startTime;
+    running = false;
+  }
+}
+
+function resetStopwatch() {
+  clearInterval(interval);
+  document.getElementById("display").textContent = "00:00:00.000";
+  running = false;
+  window.elapsedTime = 0;
+}
+
+function updateDisplay() {
+  const elapsed = Date.now() - startTime;
+  let ms = elapsed % 1000;
+  let totalSeconds = Math.floor(elapsed / 1000);
+  let seconds = totalSeconds % 60;
+  let minutes = Math.floor(totalSeconds / 60) % 60;
+  let hours = Math.floor(totalSeconds / 3600);
+
+  const format = (num, digits = 2) => num.toString().padStart(digits, "0");
+
+  document.getElementById("display").textContent = 
+    `${format(hours)}:${format(minutes)}:${format(seconds)}.${format(ms, 3)}`;
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html"><img class="logo" src="asets/LOGO.png" alt="LOGO" /></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <div class="form-container">
+    <form class="form-box">
+      <h2>Login</h2>
+      <label id="errorMessg" style="color: red; font-weight: 100;">Email ou mot de passe incorrect.</label>
+      <label id="doneMessg" style="color: green; font-weight: 100;">Vous avez connecté avec succes</label>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required />
+
+      <button type="button" id="LoginBtn">Login</button>
+
+      <p class="switch-link">Don't have an account? <a href="register.html">Register</a></p>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Taha Ait Itto DD102. Tous droits réservés.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
